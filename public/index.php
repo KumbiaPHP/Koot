@@ -54,7 +54,7 @@ const PRODUCTION = false;
  * - Esta ruta se utiliza para cargar los archivos de la aplicacion
  * - En producción, es recomendable ponerla manual usando const
  */
-define('APP_PATH', dirname(__DIR__).'/app/');
+define('APP_PATH', '../app/');
 //const APP_PATH = '/path/to/app/';
 
 /*
@@ -64,7 +64,7 @@ define('APP_PATH', dirname(__DIR__).'/app/');
  * - Ruta al directorio que contiene el núcleo de Kumbia (por defecto la ruta al directorio core)
  * - En producción, es recomendable ponerla manual usando const
  */
-define('CORE_PATH', dirname(dirname(APP_PATH)).'/core/');
+define('CORE_PATH', '../vendor/kumbia/framework/core/');
 //const CORE_PATH = '/path/to/core/';
 
 /*
