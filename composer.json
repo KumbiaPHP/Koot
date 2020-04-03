@@ -1,0 +1,5 @@
+{
+    "require": {
+        "kumbia/framework": "^1.0"
+    }
+}

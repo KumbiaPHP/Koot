@@ -5,4 +5,4 @@
 Community backend to avoid repeating ourselves in new applications.
 
 Chat with us
-https://slack.kumbiaphp.com
+<https://slack.kumbiaphp.com>
