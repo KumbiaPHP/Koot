@@ -1,5 +1,6 @@
 {
     "require": {
-        "kumbia/framework": "^1.0"
+        "kumbia/framework": "^1.0",
+        "kumbia/activerecord": "^0.4.0"
     }
 }
