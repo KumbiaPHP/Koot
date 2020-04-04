@@ -54,8 +54,7 @@ const PRODUCTION = false;
  * - Esta ruta se utiliza para cargar los archivos de la aplicacion
  * - En producción, es recomendable ponerla manual usando const
  */
-define('APP_PATH', '../app/');
-//const APP_PATH = '/path/to/app/';
+const APP_PATH = '../app/';
 
 /*
  * Define el CORE_PATH
@@ -64,8 +63,7 @@ define('APP_PATH', '../app/');
  * - Ruta al directorio que contiene el núcleo de Kumbia (por defecto la ruta al directorio core)
  * - En producción, es recomendable ponerla manual usando const
  */
-define('CORE_PATH', '../vendor/kumbia/framework/core/');
-//const CORE_PATH = '/path/to/core/';
+const CORE_PATH = '../vendor/kumbia/framework/core/';
 
 /*
  * Define el PUBLIC_PATH.
@@ -75,17 +73,11 @@ define('CORE_PATH', '../vendor/kumbia/framework/core/');
  * - Esta ruta la utiliza Kumbia como base para generar las Urls para acceder de lado de
  *   cliente (con el navegador web) y es relativa al DOCUMENT_ROOT del servidor web
  *
- *  EN PRODUCCION ESTA CONSTANTE DEBERÍA SER ESTABLECIDA MANUALMENTE
- */
-define('PUBLIC_PATH', substr($_SERVER['SCRIPT_NAME'], 0, -9)); // - index.php string[9]
-
-/**
- * En producción descomentar las 3 lineas de arriba y usar const
  * '/'          en el root del dominio, recomendado
  * '/carpeta/'  en una carpeta o varias
  * 'https://www.midominio.com/'  usando dominio.
  */
-//const PUBLIC_PATH = '/';
+const PUBLIC_PATH = '/';
 
 /**
  * Obtiene la url usando PATH_INFO.
