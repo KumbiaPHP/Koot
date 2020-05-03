@@ -1,0 +1,25 @@
+
+/vendor
+/composer.lock
+/public/index.php
+
+# temp
+/app/temp/cache/*
+/app/temp/logs/*
+
+# custom configs
+phpunit.xml
+
+# IDEs
+.vscode/
+.idea/
+/nbproject
+
+# Mac filesystem dust
+.DS_Store
+
+# Windows thumbnail cache files
+Thumbs.db
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
