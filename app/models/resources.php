@@ -1,5 +1,5 @@
 <?php
-class User extends ActiveRecord {
+class Resources extends ActiveRecord {
 //public $debug = true;
 //public $logger = true;
 	public function initialize(){
