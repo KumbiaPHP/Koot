@@ -1,5 +1,3 @@
 <?php
-class Roles extends ActiveRecord {
-//public $debug = true;
-//public $logger = true;
+class Roles extends \Kumbia\ActiveRecord\LiteRecord {
 }
