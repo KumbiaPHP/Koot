@@ -23,7 +23,7 @@ Community backend to avoid repeating ourselves in new applications.
 
 ### Support us 
 
-[![Support us](https://opencollective.com/webpack/donate/button@2x.png?color=blue =300x53.35)](https://opencollective.com/kumbiaphp)
+[Donate our collective](https://opencollective.com/kumbiaphp)
 
 Chat with us
 <https://slack.kumbiaphp.com>
