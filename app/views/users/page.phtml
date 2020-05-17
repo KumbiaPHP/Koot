@@ -21,9 +21,9 @@
                         <?php foreach ($data->getFields() as $field) : ?>
                             <td><?= h($item->$field) ?></td>
                         <?php endforeach ?>
-                        <td><?= Html::linkAction("ver/$item->id", 'Ver') ?> |
-                            <?= Html::linkAction("editar/$item->id", 'Editar') ?> |
-                            <?= Html::linkAction("borrar/$item->id", 'Borrar', 'onclick="return confirm(\'¿Está seguro?\')"') ?>
+                        <td><?= Html::linkAction("show/$item->id", _('Show')); ?> |
+                            <?= Html::linkAction("edit/$item->id", _('Edit')); ?> |
+                            <?= Html::linkAction("delete/$item->id", _('Delete'), 'onclick="return confirm(\'' . _('Are you sure?') . '\')"'); ?>
                         </td>
                     </tr>
                 <?php endforeach ?>
