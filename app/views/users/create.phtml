@@ -3,17 +3,17 @@
 <div class="row">
     <div class="col-8 offset-2">
         <?= Form::open(); ?>
-        <label for="Users_first_name">First Name</label>
-        <?= Form::text('Users.first_name', 'required') ?>
+        <label for="data_first_name">First Name</label>
+        <?= Form::text('data.first_name', 'required') ?>
 
-        <label for="Users_middlet_name">Middle Name</label>
-        <?= Form::text('Users.middlet_name') ?>
+        <label for="data_middle_name">Middle Name</label>
+        <?= Form::text('data.middle_name') ?>
 
-        <label for="Users_last_name">Last Name</label>
-        <?= Form::text('Users.last_name', 'required') ?>
+        <label for="data_last_name">Last Name</label>
+        <?= Form::text('data.last_name', 'required') ?>
 
-        <label for="Users_email">Email</label>
-        <?= Form::text('Users.email', 'required') ?>
+        <label for="data_email">Email</label>
+        <?= Form::email('data.email', 'required') ?>
 
         <?= Form::submit('Save', 'class="btn btn-primary"') ?>
         <?= Form::close(); ?>
