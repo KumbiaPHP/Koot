@@ -24,7 +24,7 @@ class ControllerCrud extends AdminController
     {
         // It is verified if the data has been sent via POST
         if (Input::hasPost('data')) {
-            $obj = new Users;
+            $obj = new $this->model;
             // Try to save the user
             if ($obj->create(Input::post('data'))) {
                 // Success message and return to the list
@@ -57,5 +57,10 @@ class ControllerCrud extends AdminController
             // If it fails the data is persistent in the form
             $this->data = Input::post('data');
         }
+    }
+    
+    public function show(int $id)
+    {
+        $this->data = $this->model::get($id);
     }
 }
