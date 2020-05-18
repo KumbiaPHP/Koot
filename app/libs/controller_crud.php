@@ -4,7 +4,7 @@
  * Parent Controller to manage the database with the
  * new ActiveRecord
  */
-class CrudController extends AdminController
+class ControllerCrud extends AdminController
 {
 
     /** @var string Nombre del modelo en CamelCase */
