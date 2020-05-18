@@ -10,9 +10,9 @@
             <thead>
                 <tr>
                     <?php foreach ($data->getAlias() as $alias) : ?>
-                        <th><?= $alias ?></th>
+                        <th scope="col"><?= $alias ?></th>
                     <?php endforeach ?>
-                    <th>Acciones</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
