@@ -1,6 +1,6 @@
 <?php
 
-class UsersController extends CrudController
+class UsersController extends ControllerCrud
 {
     public $model = 'Users';
 }
