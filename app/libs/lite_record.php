@@ -12,7 +12,7 @@ abstract class LiteRecord extends \Kumbia\ActiveRecord\LiteRecord
      */
     public function getAlias(): array
     {
-        $humanize = function ($name) {
+        $humanize = static function ($name) {
             return \ucwords(\str_replace('_', '  ', $name));
         };
 
