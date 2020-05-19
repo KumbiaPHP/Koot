@@ -19,7 +19,7 @@
     "require": {
         "php": ">=7.2.0",
         "ext-pdo": "*",
-        "kumbia/framework": "^1",
+        "kumbia/framework": "^1.1.1",
         "kumbia/activerecord": "^0.5"
     },
     "require-dev": {
