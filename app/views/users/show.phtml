@@ -9,10 +9,10 @@
         </ul>
 
         <div class="actions">
-            <a href="../page" class="btn btn-default">Listado</a>
-            <a href="../create/" class="btn btn-primary">Crear registro</a>
-            <a href="../edit/<?= $data->id ?>" class="btn btn-warning">Editar</a>
-            <a class="del btn btn-danger" title="¿Seguro que quiere borrar?" href="../borrar/<?= $data->id ?>" onclick="return confirm('¿Está seguro?');">Borrar</a>
+            <a href="../page/" class="btn btn-default"><?= _('List'); ?></a>
+            <a href="../create/" class="btn btn-primary"><?= _('Create'); ?></a>
+            <a href="../edit/<?= $data->id ?>" class="btn btn-warning"><?= _('Edit'); ?></a>
+            <a class="del btn btn-danger" title="<?= _('Are you sure you want to delete?') ?>" href="../delete/<?= $data->id ?>" onclick="return confirm('<?= _('Are you sure?'); ?>');"><?= _('Delete'); ?></a>
         </div>
     <?php else : ?>
         <?php http_response_code(404) ?>
