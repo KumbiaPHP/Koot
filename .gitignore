@@ -1,11 +1,9 @@
-
 /vendor
 /composer.lock
 /public/index.php
 
 # temp
-/app/temp/cache/*
-/app/temp/logs/*
+/app/temp/*
 
 # custom configs
 phpunit.xml
@@ -17,9 +15,3 @@ phpunit.xml
 
 # Mac filesystem dust
 .DS_Store
-
-# Windows thumbnail cache files
-Thumbs.db
-
-# Linux trash folder which might appear on any partition or disk
-.Trash-*
