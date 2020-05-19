@@ -18,8 +18,8 @@ class ControllerCrud extends AdminController
 
     public function page(int $page = 1)
     {
-        if($page === 1) {
-            Redirect::toAction('index');
+        if ($page === 1) {
+            Redirect::toAction('');
             return;
         }
 
@@ -35,7 +35,7 @@ class ControllerCrud extends AdminController
             if ($obj->create(Input::post('data'))) {
                 // Success message and return to the list
                 Flash::valid(_('Record created '));
-                Redirect::toAction('page');
+                Redirect::toAction('');
                 return;
             }
             // If it fails the data is persistent in the form
@@ -51,7 +51,7 @@ class ControllerCrud extends AdminController
         //If not exist
         if (!$this->data) {
             Flash::warning(_('Record not found'));
-            Redirect::toAction('page');
+            Redirect::toAction('');
             return;
         }
         // It is verified if the data has been sent via POST
@@ -60,14 +60,14 @@ class ControllerCrud extends AdminController
             if ($this->data->update(Input::post('data'))) {
                 // Success message and return to the list
                 Flash::valid(_('Record updated'));
-                Redirect::toAction('page');
+                Redirect::toAction('');
                 return;
             }
             // If it fails the data is persistent in the form
             $this->data = Input::post('data');
         }
     }
-    
+
     public function show(int $id)
     {
         $this->data = $this->model::get($id);
@@ -78,7 +78,7 @@ class ControllerCrud extends AdminController
         if (!$this->model::delete($id)) {
             Flash::error(_('Something was wrong'));
         }
-        
-        Redirect::toAction('page');
+
+        Redirect::toAction('');
     }
 }
