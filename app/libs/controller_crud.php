@@ -29,7 +29,8 @@ class ControllerCrud extends AdminController
             if ($obj->create(Input::post('data'))) {
                 // Success message and return to the list
                 Flash::valid(_('Record created '));
-                return Redirect::toAction('page');
+                Redirect::toAction('page');
+                return;
             }
             // If it fails the data is persistent in the form
             $this->data = Input::post('data');
@@ -44,7 +45,8 @@ class ControllerCrud extends AdminController
         //If not exist
         if (!$this->data) {
             Flash::warning(_('Record not found'));
-            return Redirect::toAction('page');
+            Redirect::toAction('page');
+            return;
         }
         // It is verified if the data has been sent via POST
         if (Input::hasPost('data')) {
@@ -52,7 +54,8 @@ class ControllerCrud extends AdminController
             if ($this->data->update(Input::post('data'))) {
                 // Success message and return to the list
                 Flash::valid(_('Record updated'));
-                return Redirect::toAction('page');
+                Redirect::toAction('page');
+                return;
             }
             // If it fails the data is persistent in the form
             $this->data = Input::post('data');
