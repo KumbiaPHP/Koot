@@ -1,7 +1,7 @@
 <div id="scaffold">
     <?php View::content() ?>
     <?php if ($data) : ?>
-        <h1><?= ucwords("$model"), ": <span>$action_name</span>" ?></h1>
+        <h1><?= ucwords("$model") ?> <span><?= _('Show') ?></span></h1>
         <ul>
             <?php foreach ($data->getFields() as $key => $field) : ?>
                 <li><strong><?= $data->getAlias()[$key] ?> :</strong> <?= h($data->$field) ?></li>
@@ -9,7 +9,7 @@
         </ul>
 
         <div class="actions">
-            <a href="../page/" class="btn btn-default"><?= _('List'); ?></a>
+            <a href="../" class="btn btn-default"><?= _('List'); ?></a>
             <a href="../create/" class="btn btn-primary"><?= _('Create'); ?></a>
             <a href="../edit/<?= $data->id ?>" class="btn btn-warning"><?= _('Edit'); ?></a>
             <a class="del btn btn-danger" title="<?= _('Are you sure you want to delete?') ?>" href="../delete/<?= $data->id ?>" onclick="return confirm('<?= _('Are you sure?'); ?>');"><?= _('Delete'); ?></a>
@@ -18,7 +18,7 @@
         <?php http_response_code(404) ?>
         <h1>_('Record not found')</h1>
         <div class="actions">
-            <a href="../page">Listado</a>
+            <a href="../">Listado</a>
             <a href="../create/">Crear registro</a>
         </div>
     <?php endif ?>
