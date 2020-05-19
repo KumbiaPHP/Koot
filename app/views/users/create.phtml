@@ -15,12 +15,12 @@
         <label for="data_email">Email</label>
         <?= Form::email('data.email', 'required') ?>
 
-        <?= Form::submit('Save', 'class="btn btn-primary"') ?>
+        <?= Form::submit(_('Save'), 'class="btn btn-primary"') ?>
         <?= Form::close(); ?>
     </div>
 </div>
 <div class="row">
     <div class="col-12">
-        <a href="../" class="btn btn-default">Listado</a>
+        <a href="../page" class="btn btn-default"><?= _('List'); ?></a>
     </div>
 </div>
