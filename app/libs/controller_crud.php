@@ -12,12 +12,18 @@ class ControllerCrud extends AdminController
 
     public function index()
     {
-        Redirect::toAction('page');
+        View::select('page');
+        $this->data = $this->model::paginateQuery('SELECT * FROM ' . strtolower($this->model), 1, 3);
     }
 
     public function page(int $page = 1)
     {
-        $this->data = $this->model::paginateQuery('SELECT * FROM ' . strtolower($this->model), $page, 30);
+        if($page === 1) {
+            Redirect::toAction('index');
+            return;
+        }
+
+        $this->data = $this->model::paginateQuery('SELECT * FROM ' . strtolower($this->model), $page, 3);
     }
 
     public function create()
