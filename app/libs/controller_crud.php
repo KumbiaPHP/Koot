@@ -63,4 +63,13 @@ class ControllerCrud extends AdminController
     {
         $this->data = $this->model::get($id);
     }
+
+    public function delete(int $id)
+    {
+        if (!$this->model::delete($id)) {
+            Flash::error(_('Something was wrong'));
+        }
+        
+        Redirect::toAction('page');
+    }
 }
