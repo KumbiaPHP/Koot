@@ -2,9 +2,8 @@
     <?php View::content() ?>
     <h1><?= ucwords("$model"), ": <span>$action_name</span>" ?></h1>
     <div class="actions">
-        <?= Html::linkAction("create/", 'Crear registro', 'class="btn btn-primary"') ?>
+        <?= Html::linkAction("create/", _('Create'), 'class="btn btn-primary"') ?>
     </div>
-    <?php //var_dump($data->getAlias()) ?>
     <?php if (isset($data) && (count($data) > 0)) : ?>
         <table class="t">
             <thead>
@@ -12,7 +11,7 @@
                     <?php foreach ($data->getAlias() as $alias) : ?>
                         <th scope="col"><?= $alias ?></th>
                     <?php endforeach ?>
-                    <th scope="col">Acciones</th>
+                    <th scope="col"><?= _('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -21,15 +20,16 @@
                         <?php foreach ($data->getFields() as $field) : ?>
                             <td><?= h($item->$field) ?></td>
                         <?php endforeach ?>
-                        <td><?= Html::linkAction("show/$item->id", _('Show')); ?> |
-                            <?= Html::linkAction("edit/$item->id", _('Edit')); ?> |
-                            <?= Html::linkAction("delete/$item->id", _('Delete'), 'onclick="return confirm(\'' . _('Are you sure?') . '\')"'); ?>
+                        <td>
+                            <a href="show/<?= $item->id ?>" class="btn btn-primary"><?= _('Show'); ?></a>
+                            <a href="edit/<?= $item->id ?>" class="btn btn-warning"><?= _('Edit'); ?></a>
+                            <a href="delete/<?= $item->id ?>" class="del btn btn-danger" title="<?= _('Are you sure you want to delete?') ?>" onclick="return confirm('<?= _('Are you sure?'); ?>');"><?= _('Delete'); ?></a>
                         </td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
         </table>
-        <?php View::partial('paginators/digg', false, array('page' => $data, 'url' => Router::get('controller_path') . '/index')) ?>
+        <?php View::partial('paginators/digg', false, array('page' => $data, 'url' => Router::get('controller_path') . '/page')) ?>
 
     <?php else : // Si no hay items
     ?>
