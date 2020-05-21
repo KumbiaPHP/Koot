@@ -4,16 +4,20 @@
  * Parent Controller to manage the database with the
  * new ActiveRecord
  */
-class ControllerCrud extends AdminController
+abstract class ControllerCrud extends AdminController
 {
 
-    /** @var string Nombre del modelo en CamelCase */
+    /** @var string Folder in views/_shared/scaffolds/ */
+    public $scaffold = 'kumbia';
+    /** @var string Model Name in CamelCase */
     public $model = '';
+    /** @var int Number of records per page */
+    const PER_PAGE = 30;
 
     public function index()
     {
         View::select('page');
-        $this->data = $this->model::paginateQuery('SELECT * FROM ' . strtolower($this->model), 1, 3);
+        $this->data = $this->model::paginateQuery('SELECT * FROM ' . strtolower($this->model), 1, self::PER_PAGE);
     }
 
     public function page(int $page = 1)
@@ -23,7 +27,7 @@ class ControllerCrud extends AdminController
             return;
         }
 
-        $this->data = $this->model::paginateQuery('SELECT * FROM ' . strtolower($this->model), $page, 3);
+        $this->data = $this->model::paginateQuery('SELECT * FROM ' . strtolower($this->model), $page, self::PER_PAGE);
     }
 
     public function create()
