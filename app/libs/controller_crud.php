@@ -12,12 +12,12 @@ abstract class ControllerCrud extends AdminController
     /** @var string Model Name in CamelCase */
     public $model = '';
     /** @var int Number of records per page */
-    const PER_PAGE = 30;
+    public $perPage = 30;
 
     public function index()
     {
         View::select('page');
-        $this->data = $this->model::paginateQuery('SELECT * FROM ' . strtolower($this->model), 1, self::PER_PAGE);
+        $this->data = $this->model::paginateQuery('SELECT * FROM ' . strtolower($this->model), 1, $this->perPage);
     }
 
     public function page(int $page = 1)
@@ -27,7 +27,7 @@ abstract class ControllerCrud extends AdminController
             return;
         }
 
-        $this->data = $this->model::paginateQuery('SELECT * FROM ' . strtolower($this->model), $page, self::PER_PAGE);
+        $this->data = $this->model::paginateQuery('SELECT * FROM ' . strtolower($this->model), $page, $this->perPage);
     }
 
     public function create()
