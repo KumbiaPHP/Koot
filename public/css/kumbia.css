@@ -182,3 +182,21 @@ label, input, textarea, select{
 footer{
     padding-top: 1em; margin-top:2em; border-top: 1px solid #ccc; 
 }
+
+table.t a {
+    color: #333;
+    font-weight: normal;
+}
+
+table.t a:hover {
+    color:#0ac;
+    text-decoration:none;
+}
+
+table.t a img {
+    filter: hue-rotate(0deg) saturate(0%) brightness(20%);
+}
+
+table.t a img:hover {
+    filter: none;
+}
