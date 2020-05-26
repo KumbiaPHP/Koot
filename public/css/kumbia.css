@@ -479,18 +479,18 @@ table {
     border-collapse: collapse
 }
 
-table.t {
+table {
     margin: auto;
     margin-bottom: 22px
 }
 
-table.t tr>th, table.t tr>td {
+table tr>th, table tr>td {
     padding: 8px;
     line-height: 1.5;
     border-top: 1px solid #ddd
 }
 
-table.t thead>tr>th {
+table thead>tr>th {
     vertical-align: bottom;
     border-bottom: 2px solid #ddd
 }
@@ -815,8 +815,6 @@ form.horizontal .form-group:after {
     background-color: #FEEFB3;
 }
 
-.paginator {}
-
 .paginator .nextprev {
     color: #000;
 }
@@ -856,20 +854,20 @@ footer {
     border-top: 1px solid #ccc;
 }
 
-table.t a {
+#scaffold table a {
     color: #333;
     font-weight: normal;
 }
 
-table.t a:hover {
+#scaffold table a:hover {
     color: #0ac;
     text-decoration: none;
 }
 
-table.t a img {
+#scaffold table a img {
     filter: hue-rotate(0deg) saturate(0%) brightness(20%);
 }
 
-table.t a img:hover {
+#scaffold table a img:hover {
     filter: none;
 }
