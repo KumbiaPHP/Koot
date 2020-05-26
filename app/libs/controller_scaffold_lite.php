@@ -2,13 +2,13 @@
 
 /**
  * Parent Controller to manage the database with the
- * new ActiveRecord
+ * new ActiveRecord (https://github.com/KumbiaPHP/ActiveRecord)
  */
-abstract class ControllerCrud extends AdminController
+abstract class ControllerScaffoldLite extends AdminController
 {
 
     /** @var string Folder in views/_shared/scaffolds/ */
-    public $scaffold = 'kumbia';
+    public $scaffold = 'lite';
     /** @var string Model Name in CamelCase */
     public $model = '';
     /** @var int Number of records per page */
