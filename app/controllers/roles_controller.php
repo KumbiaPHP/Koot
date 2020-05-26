@@ -1,6 +1,6 @@
 <?php
 
-class RolesController extends ControllerCrud
+class RolesController extends ControllerScaffoldLite
 {
     public $model = 'roles';
 }

@@ -1,6 +1,6 @@
 <?php
 
-class ResourcesController extends ControllerCrud
+class ResourcesController extends ControllerScaffoldLite
 {
     public $model = 'resources';
 }

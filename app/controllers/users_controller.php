@@ -1,6 +1,6 @@
 <?php
 
-class UsersController extends ControllerCrud
+class UsersController extends ControllerScaffoldLite
 {
     public $model = 'Users';
 }
