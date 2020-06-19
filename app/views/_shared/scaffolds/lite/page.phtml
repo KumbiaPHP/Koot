@@ -23,8 +23,8 @@
                             <td><a href="<?= "{$path}show/$item->id" ?>"><?= h($item->$field) ?></a></td>
                         <?php endforeach ?>
                         <td>
-                            <a href="<?= "{$path}edit/$item->id" ?>" class="icon"><img src="/img/edit.svg" alt="Edit" title="Edit" width="24" height="24"></a>
-                            <a href="<?= "{$path}delete/$item->id" ?>" class="icon" title="<?= _('Are you sure you want to delete?') ?>" onclick="return confirm('<?= _('Are you sure?') ?>');"><img src="/img/delete.svg" alt="Delete" title="Delete" width="24" height="24"></a>
+                            <a href="<?= "{$path}edit/$item->id" ?>" class="icon"><img src="/img/icons/edit.svg" alt="Edit" title="Edit" width="24" height="24"></a>
+                            <a href="<?= "{$path}delete/$item->id" ?>" class="icon" title="<?= _('Are you sure you want to delete?') ?>" onclick="return confirm('<?= _('Are you sure?') ?>');"><img src="/img/icons/delete.svg" alt="Delete" title="Delete" width="24" height="24"></a>
                         </td>
                     </tr>
                 <?php endforeach ?>
