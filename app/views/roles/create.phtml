@@ -1,0 +1,18 @@
+<?php View::content() ?>
+<h1><?= ucwords("$model") ?> <span><?= _('Create') ?></span></h1>
+<div class="row">
+    <div class="col-8 offset-2">
+        <?= Form::open(); ?>
+        <label for="data_name">Name</label>
+        <?= Form::text('data.name', 'required') ?>
+
+
+        <?= Form::submit(_('Save'), 'class="btn btn-primary"') ?>
+        <?= Form::close(); ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <a href="../" class="btn btn-default"><?= _('List'); ?></a>
+    </div>
+</div>

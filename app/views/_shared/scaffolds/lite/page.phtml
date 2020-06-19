@@ -1,0 +1,39 @@
+<div id="scaffold">
+    <?php View::content() ?>
+    <h1><?= ucwords("$model") ?> <span><?= _('List') ?></span></h1>
+    <div class="actions">
+        <?= Html::linkAction("create/", _('Create'), 'class="btn btn-primary"') ?>
+    </div>
+    <?php if (isset($data) && (count($data) > 0)) : ?>
+        <?php $path = $action_name === 'page' ? '../../' : ''; ?>
+        <table class="t hover">
+            <caption><?= ucwords("$model") ?></caption>
+            <thead>
+                <tr>
+                    <?php foreach ($data->getAlias() as $alias) : ?>
+                        <th scope="col"><?= $alias ?></th>
+                    <?php endforeach ?>
+                    <th scope="col"><?= _('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($data as $item) : ?>
+                    <tr>
+                        <?php foreach ($data->getFields() as $field) : ?>
+                            <td><a href="<?= "{$path}show/$item->id" ?>"><?= h($item->$field) ?></a></td>
+                        <?php endforeach ?>
+                        <td>
+                            <a href="<?= "{$path}edit/$item->id" ?>"><img src="/img/edit.svg" alt="Edit" title="Edit" width="24" height="24"></a>
+                            <a href="<?= "{$path}delete/$item->id" ?>" title="<?= _('Are you sure you want to delete?') ?>" onclick="return confirm('<?= _('Are you sure?') ?>');"><img src="/img/delete.svg" alt="Delete" title="Delete" width="24" height="24"></a>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+        <?php View::partial('paginators/digg', false, ['page' => $data, 'url' => Router::get('controller_path') . '/page']) ?>
+
+    <?php else : // If there are no items
+    ?>
+        <h2><?= _('No records') ?></h2>
+    <?php endif ?>
+</div>

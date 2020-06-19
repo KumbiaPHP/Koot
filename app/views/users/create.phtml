@@ -1,0 +1,26 @@
+<?php View::content() ?>
+<h1><?= ucwords("$model") ?> <span><?= _('Create') ?></span></h1>
+<div class="row">
+    <div class="col-8 offset-2">
+        <?= Form::open(); ?>
+        <label for="data_first_name">First Name</label>
+        <?= Form::text('data.first_name', 'required') ?>
+
+        <label for="data_middle_name">Middle Name</label>
+        <?= Form::text('data.middle_name') ?>
+
+        <label for="data_last_name">Last Name</label>
+        <?= Form::text('data.last_name', 'required') ?>
+
+        <label for="data_email">Email</label>
+        <?= Form::email('data.email', 'required') ?>
+
+        <?= Form::submit(_('Save'), 'class="btn btn-primary"') ?>
+        <?= Form::close(); ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <a href="../" class="btn btn-default"><?= _('List'); ?></a>
+    </div>
+</div>
