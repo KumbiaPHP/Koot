@@ -3,83 +3,24 @@
  * KumbiaPHP Web Framework
  * Parámetros de conexión a la base de datos
  */
-return [
-    'development' => [
-        /**
-         * host: ip o nombre del host de la base de datos
-         */
-        'host'     => 'localhost',
-        /**
-         * username: usuario con permisos en la base de datos
-         */
-        'username' => 'root', //no es recomendable usar el usuario root
-        /**
-         * password: clave del usuario de la base de datos
-         */
+/*return [
+    'default' => [
+        'dsn'      => 'mysql:host=127.0.0.1;dbname=ku_admin;charset=utf8',
+        'username' => 'root',
         'password' => '',
-        /**
-         * test: nombre de la base de datos
-         */
-        'name'     => 'test',
-        /**
-         * type: tipo de motor de base de datos (mysql, pgsql, oracle o sqlite)
-         */
-        'type'     => 'mysql',
-        /**
-         * charset: Conjunto de caracteres de conexión, por ejemplo 'utf8'
-         */
-        'charset'  => 'utf8',
-        /**
-         * dsn: Cadena de conexión a la base de datos
-         */
-        //'dsn' => '',
-        /**
-         * pdo: activar conexiones PDO (On/Off); descomentar para usar
-         */
-        //'pdo' => 'On',
-        ],
-
-    'production' => [
-        /**
-         * host: ip o nombre del host de la base de datos
-         */
-        'host'     => 'localhost',
-        /**
-         * username: usuario con permisos en la base de datos
-         */
-        'username' => 'root', //no es recomendable usar el usuario root
-        /**
-         * password: clave del usuario de la base de datos
-         */
-        'password' => '',
-        /**
-         * test: nombre de la base de datos
-         */
-        'name'     => 'test',
-        /**
-         * type: tipo de motor de base de datos (mysql, pgsql o sqlite)
-         */
-        'type'     => 'mysql',
-        /**
-         * charset: Conjunto de caracteres de conexión, por ejemplo 'utf8'
-         */
-        'charset'  => 'utf8',
-        /**
-         * dsn: cadena de conexión a la base de datos
-         */
-        //'dsn' => '',
-        /**
-         * pdo: activar conexiones PDO (OnOff); descomentar para usar
-         */
-        //'pdo' => 'On',
-        ],
-];
+        'params'   => [
+            //PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', //UTF8 en PHP < 5.3.6
+            \PDO::ATTR_PERSISTENT => \true, //conexión persistente
+            \PDO::ATTR_ERRMODE    => \PDO::ERRMODE_EXCEPTION
+        ]
+    ]
+];*/
 
 /**
  * Ejemplo de SQLite
  */
-/*'development' => [
-    'type' => 'sqlite',
-    'dsn' => 'temp/data.sq3',
-    'pdo' => 'On',
-] */
+return ['default' => [
+        'dsn' => 'sqlite:'.APP_PATH.'temp/sqlite/ku_admin.db',
+        'pdo' => 'On',
+    ]    
+];
