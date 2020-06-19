@@ -5,6 +5,7 @@
         <?= Html::linkAction("create/", _('Create'), 'class="btn btn-primary"') ?>
     </div>
     <?php if (isset($data) && (count($data) > 0)) : ?>
+        <?php $path = $action_name === 'page' ? '../../' : ''; ?>
         <table class="t hover">
             <caption><?= ucwords("$model") ?></caption>
             <thead>
@@ -22,8 +23,8 @@
                             <td><a href="<?= "{$path}show/$item->id" ?>"><?= h($item->$field) ?></a></td>
                         <?php endforeach ?>
                         <td>
-                            <a href="<?= "edit/$item->id" ?>" class="icon"><img src="/img/edit.svg" alt="Edit" title="Edit" width="24" height="24"></a>
-                            <a href="<?= "delete/$item->id" ?>" class="icon" title="<?= _('Are you sure you want to delete?') ?>" onclick="return confirm('<?= _('Are you sure?') ?>');"><img src="/img/delete.svg" alt="Delete" title="Delete" width="24" height="24"></a>
+                            <a href="<?= "{$path}edit/$item->id" ?>" class="icon"><img src="/img/edit.svg" alt="Edit" title="Edit" width="24" height="24"></a>
+                            <a href="<?= "{$path}delete/$item->id" ?>" class="icon" title="<?= _('Are you sure you want to delete?') ?>" onclick="return confirm('<?= _('Are you sure?') ?>');"><img src="/img/delete.svg" alt="Delete" title="Delete" width="24" height="24"></a>
                         </td>
                     </tr>
                 <?php endforeach ?>
