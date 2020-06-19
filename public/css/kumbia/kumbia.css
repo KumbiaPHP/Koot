@@ -854,20 +854,3 @@ footer {
     border-top: 1px solid #ccc;
 }
 
-#scaffold table a {
-    color: #333;
-    font-weight: normal;
-}
-
-#scaffold table a:hover {
-    color: #0ac;
-    text-decoration: none;
-}
-
-#scaffold table a img {
-    filter: hue-rotate(0deg) saturate(0%) brightness(20%);
-}
-
-#scaffold table a img:hover {
-    filter: none;
-}
