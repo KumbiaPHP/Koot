@@ -25,7 +25,7 @@ notifications:
 #  - DB=sqlite
 
 install:
-  - composer install --no-dev
+  - composer install
 
 script:
   - vendor/bin/phpunit --configuration phpunit.xml.dist
