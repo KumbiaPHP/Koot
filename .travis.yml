@@ -25,12 +25,10 @@ notifications:
 #  - DB=sqlite
 
 install:
-  - composer install
-  #- if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.6" ]]; then composer require mockery/mockery ~0.9; fi
-  #  - if [[ $HHVM == true ]]; then composer require "phpunit/phpunit:5.7"; fi
+  - composer install --no-dev
 
 script:
-  - phpunit --configuration phpunit.xml.dist
+  - vendor/bin/phpunit --configuration phpunit.xml.dist
 #  - phpunit --configuration core/phpunit.xml.dist --coverage-text --colors --coverage-clover=coverage.clover
 #  - wget https://scrutinizer-ci.com/ocular.phar
 #  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
