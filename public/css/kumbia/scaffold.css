@@ -11,3 +11,12 @@
 #scaffold table {
     width: 100%
 }
+
+#scaffold th {
+    text-align: left;
+}
+
+#scaffold caption {
+    font-size: 2em;
+    text-align: left;
+}
