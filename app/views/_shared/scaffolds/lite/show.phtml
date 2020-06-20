@@ -1,18 +1,18 @@
-<div id="scaffold <?= $model ?>">
+<div id="scaffold" class="<?= $model ?>">
     <?php View::content() ?>
     <?php if ($data) : ?>
         <h1><?= ucwords("$model") ?> <span><?= _('Show') ?></span></h1>
-        <ul>
+        <ul class="show">
             <?php foreach ($data->getFields() as $key => $field) : ?>
-                <li><strong><?= $data->getAlias()[$key] ?> :</strong> <?= h($data->$field) ?></li>
+                <li><strong><?= $data->getAlias()[$key] ?></strong> <?= h($data->$field) ?></li>
             <?php endforeach ?>
         </ul>
 
         <div class="actions">
             <a href="../" class="btn btn-default"><?= _('List'); ?></a>
             <a href="../create/" class="btn btn-primary"><?= _('Create'); ?></a>
-            <a href="../edit/<?= $data->id ?>" class="btn btn-warning"><?= _('Edit'); ?></a>
-            <a class="del btn btn-danger" title="<?= _('Are you sure you want to delete?') ?>" href="../delete/<?= $data->id ?>" onclick="return confirm('<?= _('Are you sure?'); ?>');"><?= _('Delete'); ?></a>
+            <a href="../edit/<?= $data->id ?>" class="icon"><img src="/img/icons/edit.svg" alt="<?= _('Edit') ?>" title="<?= _('Edit') ?>" width="24" height="24"></a>
+            <a href="../delete/<?= $data->id ?>" class="icon" title="<?= _('Are you sure you want to delete?') ?>" onclick="return confirm('<?= _('Are you sure?') ?>');"><img src="/img/icons/delete.svg" alt="<?= _('Delete') ?>" title="<?= _('Delete') ?>" width="24" height="24"></a>
         </div>
     <?php else : ?>
         <?php http_response_code(404) ?>

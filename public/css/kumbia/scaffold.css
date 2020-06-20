@@ -20,3 +20,23 @@
     font-size: 2em;
     text-align: left;
 }
+
+#scaffold .show {
+    list-style: none;
+    padding: 1em
+}
+
+#scaffold .show strong {
+    width: 30%;
+    display: inline-block;
+}
+
+#scaffold .show li {
+    padding: 8px;
+    line-height: 1.5;
+    border-top: 1px solid #ddd;
+}
+
+#scaffold .show li:hover {
+    background-color: #f5f5f5
+}
