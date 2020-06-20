@@ -1,0 +1,36 @@
+language: php
+dist: trusty
+
+php:
+  - 7.2
+  - 7.3
+  - 7.4
+  - master
+
+matrix:
+  allow_failures:
+    - php: master
+# 7.2 and 7.3 for the Mockery class
+
+notifications:
+  slack: kumbiaphp:51JaKQTXASwf52D8b32OyWb9
+#    irc: "irc.freenode.org#kumbiaphp"
+#    email:
+#    - programador.manuel@gmail.com
+
+
+# env:
+#  - DB=mysql
+#  - DB=pgsql
+#  - DB=sqlite
+
+install:
+  - composer install
+  #- if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.6" ]]; then composer require mockery/mockery ~0.9; fi
+  #  - if [[ $HHVM == true ]]; then composer require "phpunit/phpunit:5.7"; fi
+
+script:
+  - phpunit --configuration phpunit.xml.dist
+#  - phpunit --configuration core/phpunit.xml.dist --coverage-text --colors --coverage-clover=coverage.clover
+#  - wget https://scrutinizer-ci.com/ocular.phar
+#  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
