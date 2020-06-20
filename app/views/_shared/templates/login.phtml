@@ -1,0 +1,253 @@
+<?php
+//don't touch
+http_response_code(401);
+?>
+<html>
+<head>
+    <title>Login KuAdmin</title>
+    <style>
+        * {
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            margin: 0;
+        }
+        html,
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            background: #f3f2f2;
+        }
+        h4 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            opacity: 0.85;
+        }
+        label {
+            font-size: 12.5px;
+            color: #000;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+        form {
+            padding: 40px 30px;
+            background: #fefefe;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-bottom: 1em;
+            width: 300px;
+        }
+        form h4 {
+            margin-bottom: 1em;
+            color: rgba(0, 0, 0, 0.5);
+        }
+        form h4 span {
+            color: black;
+            font-weight: 700;
+        }
+        form p {
+            line-height: 155%;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #000;
+            opacity: 0.65;
+            font-weight: 400;
+            margin-bottom: 40px;
+        }
+        a.remember {
+            color: rgba(0, 0, 0, 0.4);
+            font-size: 14px;
+            border-bottom: solid 1px rgba(0, 0, 0, 0);
+            padding-bottom: 4px;
+            margin-left: auto;
+            font-weight: 300;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            margin-top: 40px;
+        }
+        a.remember:hover {
+            border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+        }
+        [type=submit] {
+            -webkit-appearance: none;
+            width: auto;
+            min-width: 100px;
+            border-radius: 6px;
+            text-align: center;
+            padding: 15px 40px;
+            margin-top: 5px;
+            background-color: #00a1cb;
+            color: #fff;
+            font-size: 1em;
+            margin-left: auto;
+            font-weight: 500;
+            box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.13);
+            border: none;
+            transition: all 0.3s ease;
+            outline: none;
+            cursor: pointer;
+        }
+        [type=submit]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 2px 6px -1px rgba(182, 157, 230, 0.65);
+        }
+        [type=submit]:hover:active {
+            transform: scale(1.8);
+        }
+        input {
+            font-size: 1em;
+            padding: 20px 0px;
+            height: 3em;
+            border: none;
+            border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            transition: all 0.3s linear;
+            color: #000;
+            font-weight: 400;
+        }
+        input:focus {
+            border-bottom: solid 1px #b69de6;
+            outline: 0;
+            box-shadow: 0 2px 6px -8px rgba(182, 157, 230, 0.45);
+        }
+        .floating-label {
+            position: relative;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .floating-label label {
+            position: absolute;
+            top: calc(50% - 7px);
+            left: 0;
+            opacity: 0;
+            transition: all 0.3s ease;
+            padding-left: 44px;
+        }
+        .floating-label input {
+            width: calc(100% - 44px);
+            margin-left: auto;
+            display: flex;
+        }
+        .floating-label .icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 3em;
+            width: 3em;
+            display: flex;
+        }
+        .floating-label .icon svg {
+            height: 2em;
+            width: 2em;
+            margin: auto;
+            opacity: 0.15;
+            transition: all 0.3s ease;
+        }
+        .floating-label .icon svg path {
+            transition: all 0.3s ease;
+        }
+        .floating-label input:not(:placeholder-shown) {
+            padding: 28px 0px 12px 0px;
+        }
+        .floating-label input:not(:placeholder-shown)+label {
+            transform: translateY(-10px);
+            opacity: 0.7;
+        }
+        .floating-label input:valid:not(:placeholder-shown)+label+.icon svg {
+            opacity: 1;
+        }
+        .floating-label input:valid:not(:placeholder-shown)+label+.icon svg path {
+            fill: #3ccb00;
+        }
+        .floating-label input:not(:valid):not(:focus)+label+.icon {
+            -webkit-animation-name: shake-shake;
+            animation-name: shake-shake;
+            -webkit-animation-duration: 0.3s;
+            animation-duration: 0.3s;
+        }
+
+        @keyframes shake-shake {
+            0% {transform: translateX(-3px);}
+            20% {transform: translateX(3px);}
+            40% {transform: translateX(-3px);}
+            60% {transform: translateX(3px);}
+            80% {transform: translateX(-3px);}
+            100% {transform: translateX(0px);}
+        }
+        .session {
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            height: auto;
+            margin: auto auto;
+            background: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.12);
+        }
+        .left {
+            width: 220px;
+            height: auto;
+            min-height: 100%;
+            position: relative;
+            background-image: url(/img/login.jpg);
+            background-size: cover;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+        form img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: .5em;
+        }
+        form h4,
+        p {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="session">
+        <div class="left">
+            <!-- <h3>KumbiaPHP</h3> -->
+        </div>
+        <form action="" class="log-in" autocomplete="off">
+            <img src="/img/kumbia.svg" alt="KumbiaPHP">
+            <h4>KuAdmin <span>NUVA</span></h4>
+            <p>Welcome back! Log in to your account</p>
+            <div class="floating-label">
+                <input placeholder="Email" type="email" name="email" id="email" autocomplete="off" required>
+                <label for="email">Email:</label>
+                <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <path d="M17.5 24.64c-1.3 0-2.4 1.1-2.4 2.4v45.9c0 1.3 1.1 2.4 2.4 2.4h64.9c1.3 0 2.4-1.1 2.4-2.4v-45.9c0-1.3-1.1-2.4-2.4-2.4H17.5zm2.4 4.8h60.2v1.2l-30.1 22-30.1-22v-1.2zm0 7l28.7 21c.8.6 2 .6 2.8 0l28.7-21v34.1H19.9v-34.1z"/>
+                    <path style="fill: none" d="M0 0h100v100H0z"/>
+                </svg>
+                </div>
+            </div>
+            <div class="floating-label">
+                <input placeholder="Password" type="password" name="password" id="password" autocomplete="off" required>
+                <label for="password">Password:</label>
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path style="fill: none" d="M0 0h24v24H0z"/>
+                        <path d="M19 21H5V9h14v12zM6 20h12V10H6v10z"/>
+                        <path d="M16.5 10h-1V7c0-1.9-1.6-3.5-3.5-3.5S8.5 5.1 8.5 7v3h-1V7c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5v3zM12 16.5c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5zm0-2c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5z"/>
+                    </svg>
+                </div>
+            </div>
+            <input type="submit">
+            <a href="#" class="remember">Don't remember my password</a>
+        </form>
+    </div>
+</body>
+
+</html>
