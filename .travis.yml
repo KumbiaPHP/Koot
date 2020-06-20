@@ -1,0 +1,34 @@
+language: php
+dist: trusty
+
+php:
+  - 7.2
+  - 7.3
+  - 7.4
+  - master
+
+matrix:
+  allow_failures:
+    - php: master
+# 7.2 and 7.3 for the Mockery class
+
+notifications:
+  slack: kumbiaphp:51JaKQTXASwf52D8b32OyWb9
+#    irc: "irc.freenode.org#kumbiaphp"
+#    email:
+#    - programador.manuel@gmail.com
+
+
+# env:
+#  - DB=mysql
+#  - DB=pgsql
+#  - DB=sqlite
+
+install:
+  - composer install
+
+script:
+  - vendor/bin/phpunit --configuration phpunit.xml.dist
+#  - phpunit --configuration core/phpunit.xml.dist --coverage-text --colors --coverage-clover=coverage.clover
+#  - wget https://scrutinizer-ci.com/ocular.phar
+#  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
