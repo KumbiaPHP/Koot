@@ -15,7 +15,7 @@ require_once CORE_PATH . 'kumbia/controller.php';
  * @category Kumbia
  * @package Controller
  */
-class AdminController extends Controller
+abstract class ControllerAdmin extends Controller
 {
 
     final protected function initialize()
