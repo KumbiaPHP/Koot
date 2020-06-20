@@ -6,7 +6,7 @@
  * @category Kumbia
  * @package Controller
  */
-class ScaffoldController extends AdminController
+abstract class ControllerScaffold extends ControllerAdmin
 {
     /** @var string Carpeta en views/_shared/scaffolds/ */
     public $scaffold = 'kumbia';

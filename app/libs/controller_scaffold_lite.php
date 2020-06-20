@@ -4,7 +4,7 @@
  * Parent Controller to manage the database with the
  * new ActiveRecord (https://github.com/KumbiaPHP/ActiveRecord)
  */
-abstract class ControllerScaffoldLite extends AdminController
+abstract class ControllerScaffoldLite extends ControllerAdmin
 {
 
     /** @var string Folder in views/_shared/scaffolds/ */
