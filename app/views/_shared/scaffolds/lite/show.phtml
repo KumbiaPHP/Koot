@@ -1,4 +1,4 @@
-<div id="scaffold">
+<div id="scaffold <?= $model ?>">
     <?php View::content() ?>
     <?php if ($data) : ?>
         <h1><?= ucwords("$model") ?> <span><?= _('Show') ?></span></h1>
