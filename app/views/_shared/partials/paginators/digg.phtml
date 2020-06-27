@@ -1,4 +1,5 @@
 <?php
+
 /**
  * KumbiaPHP web & app Framework
  *
@@ -23,17 +24,8 @@
  * @license    https://github.com/KumbiaPHP/KumbiaPHP/blob/master/LICENSE   New BSD License
  */
 
-if (!isset($url)) {
-    extract(Router::get());
-    $url = "$controller/page";
-    if ($module) {
-        $url = "$module/$url";
-    }
-}
-
-if (!isset($show)) {
-    $show = 10;
-}
+$url = $url ?? Router::get('controller_path') . '/page';
+$show = $show ?? 10;
 
 $half = floor($show / 2);
 
@@ -45,12 +37,11 @@ if ($page->page() <= $half) {
     if ($start < 1) {
         $start = 1;
     }
-
 } else {
     $start = $page->page() - $half;
 }
 $last = false;
-if ($start == $page->totalPages()) {
+if ($start === $page->totalPages()) {
     if ($start - 1 > 0) {
         $start -= 1;
     }
@@ -59,44 +50,43 @@ if ($start == $page->totalPages()) {
 }
 ?>
 
-<div class="paginator">
-    <?php if ($page->prevPage() == 1) {
-    echo Html::link("$url/", 'Anterior', 'title="Ir a la pág. anterior" class="nextprev" rel="prev"');
-}
-//se coloca el link sin número de página para la página 1
-elseif ($page->prevPage()) {
-    echo Html::link("$url/$page->prevPage()/", 'Anterior', 'title="Ir a la pág. anterior" class="nextprev" rel="prev"');
-}
-?>
+<nav class="paginator">
+    <?php if ($page->prevPage() === 1) {
+        echo Html::link("$url/",  _('Prev'), 'rel="prev"');
+    }
+    //se coloca el link sin número de página para la página 1
+    elseif ($page->prevPage()) {
+        echo Html::link("$url/$page->prevPage()/", _('Prev'), 'rel="prev"');
+    }
+    ?>
 
-    <?php if ($start == 1) { //se coloca el link sin número de página para la página 1
-    $start = 2;
-    $show -= 1;
-    echo $page->page() == 1 ? "<strong>1</strong>" : Html::link("$url/", '1');
-}?>
+    <?php if ($start === 1) { //se coloca el link sin número de página para la página 1
+        $start = 2;
+        $show -= 1;
+        echo $page->page() === 1 ? "<strong>1</strong>" : Html::link("$url/", '1');
+    } ?>
 
-    <?php for ($i = $start; $i <= $page->totalPages() && $i < ($start + $show); $i++): ?>
-        <?=$i == $page->page() ? "<strong>$i</strong>" : Html::link("$url/$i/", $i, "title=\"Ir a la pág. $i\"");?>
-    <?php endfor;?>
+    <?php for ($i = $start; $i <= $page->totalPages() && $i < ($start + $show); $i++) : ?>
+        <?= $i === $page->page() ? "<strong>$i</strong>" : Html::link("$url/$i/", $i ) ?>
+    <?php endfor ?>
 
-    <?php if ($page->totalPages() > $i): ?>
-        <?php if ($page->totalPages() > ($i + 1)): ?>
+    <?php if ($page->totalPages() > $i) : ?>
+        <?php if ($page->totalPages() > ($i + 1)) : ?>
             ...
-        <?php endif?>
+        <?php endif ?>
 
-        <?php $i = $page->totalPages() - 1;?>
-        <?=Html::link("$url/$i/", $i)?>
-        <?=Html::link("$url/{$page->totalPages()}/", $page->totalPages())?>
-    <?php elseif ($i == $page->totalPages()): ?>
-    	<?php if ($last): ?>
-        	<?="<strong>$i</strong>"?>
-        <?php else: ?>
-        	<?=Html::link("$url/$i/", $i)?>
-        <?php endif;?>
-    <?php endif;?>
+        <?php $i = $page->totalPages() - 1 ?>
+        <?= Html::link("$url/$i/", $i) ?>
+        <?= Html::link("$url/{$page->totalPages()}/", $page->totalPages()) ?>
+    <?php elseif ($i === $page->totalPages()) : ?>
+        <?php if ($last) : ?>
+            <?= "<strong>$i</strong>" ?>
+        <?php else : ?>
+            <?= Html::link("$url/$i/", $i) ?>
+        <?php endif ?>
+    <?php endif ?>
 
     <?php if ($page->nextPage()) {
-    echo Html::link("$url/{$page->nextPage()}/", 'Siguiente', 'title="Ir a la pág. siguiente" class="nextprev" rel="next"');
-}
-?>
-</div>
+        echo Html::link("$url/{$page->nextPage()}/", _('Next'), 'rel="next"');
+    } ?>
+</nav> 

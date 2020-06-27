@@ -1,0 +1,67 @@
+<?php
+/**
+ * KumbiaPHP web & app Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.
+ * 
+ * Paginador "digg" para aplicaciones
+ *
+ * Parametros del paginador:
+ *   page: objeto obtenido al invocar al paginador
+ *   show: numero de paginas que se mostraran en el paginador
+ *   url: url para la accion que efectua la paginacion, por defecto "module/controller/page/"
+ *        y se envia por parametro el numero de pagina
+ *
+ * @category    Kumbia
+ * @package     Partials
+ * @subpackage  Paginators
+ *
+ * @copyright  Copyright (c) 2005 - 2020 KumbiaPHP Team (http://www.kumbiaphp.com)
+ * @license    https://github.com/KumbiaPHP/KumbiaPHP/blob/master/LICENSE   New BSD License
+ */
+
+$url = $url ?? Router::get('controller_path');
+$show = $how ?? 6;
+$half = floor($show / 2);
+
+$pagetotal = $page->totalPages();
+$prev = $page->prevPage();
+$next = $page->nextPage();
+$page = $page->page();
+// Calculando el inicio de paginador centrado
+if ($page <= $half) {
+    $start = 1;
+} elseif (($pagetotal - $page) < $half) {
+    $start = $pagetotal - $show + 1;
+    if ($start < 1) {
+        $start = 1;
+    }
+} else {
+    $start = $page - $half;
+}
+
+if ($pagetotal > 1) : ?>
+    <nav class="paginator">
+        <?php
+        if ($page === 2) {
+            echo Html::link("$url/", _('Prev'), 'rel="prev"'); // Se coloca el enlace sin número de página para la pagina 1
+        } elseif ($page > 2) {
+            echo Html::link("$url/page/$prev", _('Prev'), 'rel="prev"');
+        } ?>
+        <?php if ($start === 1) { //se coloca el link sin número de página para la página 1
+            $start = 2;
+            $show -= 1;
+            echo $page === 1 ? "<strong>1</strong>" : Html::link("$url/", '1', 'rel="first"');
+        } ?>
+        <?php for ($i = $start; $i <= $pagetotal && $i < ($start + $show); $i++) : ?>
+            <?= $i === $page ? "<strong>$i</strong>" : Html::link("$url/page/$i", $i) ?>
+        <?php endfor ?>
+        <?php if ($next) {
+            echo Html::link("$url/page/$next", _('Next'), 'rel="next"');
+        } ?>
+    </nav>
+<?php endif ?>
+<?php //count($data), ' - ', $data->count(), ' items.' ?> 
