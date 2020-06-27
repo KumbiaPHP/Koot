@@ -30,7 +30,7 @@
                 <?php endforeach ?>
             </tbody>
         </table>
-        <?php View::partial('paginators/digg', false, ['page' => $data, 'url' => Router::get('controller_path') . '/page']) ?>
+        <?php View::partial('paginators/digg', false, ['page' => $data]) ?>
 
     <?php else : // If there are no items
     ?>
