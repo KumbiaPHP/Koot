@@ -8,6 +8,7 @@ Community backend to avoid repeating ourselves in new applications.
 
 * PHP >= 7.4 <https://www.php.net/>
 * Composer <https://getcomposer.org/download/>
+* Multi language
 
 ### Install
 
