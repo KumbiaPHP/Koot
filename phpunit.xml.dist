@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
-         bootstrap="app/tests/bootstrap.php"
-         forceCoversAnnotation="false"
-         beStrictAboutCoversAnnotation="false"
-         beStrictAboutOutputDuringTests="true"
-         beStrictAboutTodoAnnotatedTests="true"
-         verbose="true"
-         colors="true">
+        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+        bootstrap="app/tests/bootstrap.php"
+        forceCoversAnnotation="false"
+        beStrictAboutCoversAnnotation="false"
+        beStrictAboutOutputDuringTests="true"
+        beStrictAboutTodoAnnotatedTests="true"
+        verbose="true"
+        colors="true">
     <testsuites>
-        <testsuite name="Application testsuite">
+        <testsuite name="Admin testsuite">
             <directory suffix="Test.php">app/tests/</directory>
         </testsuite>
     </testsuites>
