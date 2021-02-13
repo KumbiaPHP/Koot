@@ -1,10 +1,9 @@
 language: php
-dist: trusty
+dist: bionic
 
 php:
-  - 7.2
-  - 7.3
   - 7.4
+  - 8.0
   - master
 
 matrix:
@@ -16,7 +15,7 @@ notifications:
   slack: kumbiaphp:51JaKQTXASwf52D8b32OyWb9
 #    irc: "irc.freenode.org#kumbiaphp"
 #    email:
-#    - programador.manuel@gmail.com
+#    - xxxxx@gmail.com
 
 
 # env:
