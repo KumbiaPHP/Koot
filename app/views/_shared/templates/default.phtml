@@ -2,20 +2,23 @@
 <html lang="es">
  <head>
   <meta charset=<?= APP_CHARSET ?> >
-  <title>KumbiaPHP Framework</title>
+  <title>Koot Fast App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php Tag::css('kumbia.min') ?>
-  <?= Html::includeCss() ?>
+  <link rel="stylesheet" href="/css/koot.min.css?<?= filemtime('css/koot.min.css') ?>">
 </head>
 <body>
 <div class="container">
-  <header class="row">
-      <div class="col-8">
-        <?= Html::img('kumbiaphp.svg', 'KumbiaPHP logo') ?>
-      </div>
-      <div class="col-4 text-right">
-          App: <strong><?= basename(dirname(APP_PATH)) ?></strong> (<?= PRODUCTION ? 'Production' : 'Development' ?>)
-      </div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#"><?= Html::img('kumbiaphp.svg', 'KumbiaPHP logo') ?></a</li>
+      </ul>
+      <ul>
+        <li><a href="#">Link</a></li>
+        <li><a href="#" role="button">Link</a></li>
+        <li>App: <strong>Koot</strong> (<?= PRODUCTION ? 'Production' : 'Development' ?>)</li>
+      </ul>
+    </nav>
   </header>
   <?php View::content() ?>
   <?php View::partial('kumbia/footer') ?>
