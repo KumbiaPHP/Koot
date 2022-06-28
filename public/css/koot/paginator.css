@@ -1,0 +1,26 @@
+.paginator {
+    justify-content: flex-start;
+}
+
+.paginator .nextprev {
+    color: #000;
+}
+
+.paginator a {
+    border: 1px solid #e8ebf1;
+    padding: .5em;
+    text-decoration: none;
+    margin: .5em .1em;
+    background: #FFF;
+}
+
+.paginator a:hover {
+    background: #e8ebf1;
+}
+
+.paginator strong {
+    background: #e8ebf1;
+    border: 1px solid #e8ebf1;
+    padding: .5em;
+    margin: .5em .1em;
+}
