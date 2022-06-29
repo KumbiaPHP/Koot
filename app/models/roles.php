@@ -1,8 +1,10 @@
 <?php
 class Roles extends LiteRecord
 {
-    public function _beforeCreate()
-    {
-        $this->status = 1;
-    }
+    // Roles in the Open-Source under BSD3 License
+    const ROLES = [
+        1 => 'Super Admin',
+        2 => 'Editor',
+        3 => 'Author'
+    ];
 }
