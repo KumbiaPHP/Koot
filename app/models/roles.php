@@ -1,5 +1,5 @@
 <?php
-class Roles extends LiteRecord
+class Roles
 {
     // Roles in the Open-Source under BSD3 License
     const ROLES = [
