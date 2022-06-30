@@ -23,6 +23,9 @@ abstract class ControllerAdmin extends Controller
         //Código de auth y permisos
         //Será libre, pero añadiremos uno por defecto en breve
         //Posiblemente se cree una clase abstracta con lo que debe tener por defecto
+        View::template('admin');
+        /* View::select(null,'login/login');
+        return false; */
     }
 
     final protected function finalize()
