@@ -1,20 +1,16 @@
 <?php View::content() ?>
-<article>
 <h1><?= _('Users') ?> <span><?= _('Create') ?></span></h1>
 <div>
     <?= Form::open() ?>
+    <div class="grid">
     <label>First Name
     <?= Form::text('data.first_name', 'required') ?> 
-    </label>
-
-    <label>Middle Name
-    <?= Form::text('data.middle_name') ?> 
     </label>
 
     <label>Last Name
     <?= Form::text('data.last_name', 'required') ?> 
     </label>
-
+    </div>
     <label>Email
     <?= Form::email('data.email', 'required') ?> 
     </label>
@@ -22,7 +18,6 @@
     <?= Form::submit(_('Save')) ?>
     <?= Form::close() ?>
 </div>
-</article>
 <div class="actions">
         <a href="../" role="button"><?= _('List') ?></a>
 </div> 

@@ -2,11 +2,12 @@
     <?php View::content() ?>
     <h1><?= ucwords("$model") ?> <span><?= _('List') ?></span></h1>
     <div class="actions">
-        <?= Html::linkAction("create/", _('Create'), 'class="btn btn-primary"') ?>
+        <?= Html::linkAction("create/", _('Create'), 'role="button"') ?>
     </div>
     <?php if (isset($data) && (count($data) > 0)) : ?>
         <?php $path = $action_name === 'page' ? '../../' : ''; ?>
-        <table class="t hover">
+        <figure>
+        <table>
             <caption><?= ucwords("$model") ?></caption>
             <thead>
                 <tr>
@@ -30,6 +31,7 @@
                 <?php endforeach ?>
             </tbody>
         </table>
+        </figure>
         <?php View::partial('paginators/digg', false, ['page' => $data]) ?>
 
     <?php else : // If there are no items

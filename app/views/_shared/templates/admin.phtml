@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset=<?= APP_CHARSET ?> >
+  <title>Koot Fast App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/koot.min.css?<?= filemtime('css/koot.min.css') ?>">
+</head>
+<body>
+<div class="container-fluid grid">   
+<main class="grid" id="develop">
+  <aside id="menu">
+  <nav>
+    <ul>
+    <li><a href="#"><?= Html::img('kumbia.svg', 'KumbiaPHP logo') ?></a</li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Develop</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#" class="settings">Settings</a></li>
+    </ul>
+  </nav>
+</aside>
+<div id="doc">
+  <nav>
+      <ul>
+      <li>App: <strong>Koot</strong><br><small><?= PRODUCTION ? 'Production' : 'Development' ?></small></li>
+      </ul>
+      <ul>
+        <li><a href="#">Link</a></li>
+        <li><a href="#" role="button">User</a></li>
+      </ul>
+    </nav>
+  <?php View::content() ?>
+  <?php View::partial('kumbia/footer') ?> 
+</div>
+</main>
+</div>
+</body>
+</html>

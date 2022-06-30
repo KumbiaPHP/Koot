@@ -1,4 +1,4 @@
-#scaffold table a {
+/* #scaffold table a {
     color: #333;
     font-weight: normal;
 }
@@ -6,7 +6,7 @@
 #scaffold table a:hover {
     color: #0ac;
     text-decoration: none;
-}
+} */
 
 #scaffold table {
     width: 100%
