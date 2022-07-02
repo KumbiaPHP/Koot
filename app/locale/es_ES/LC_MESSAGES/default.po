@@ -1,13 +1,97 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2009-05-22 00:29-0400\n"
+"POT-Creation-Date: 2022-07-02 06:15-0500\n"
+"PO-Revision-Date: 2022-07-02 06:15-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Spanish\n"
-"X-Poedit-Country: SPAIN\n"
+"X-Generator: Poedit 3.1\n"
+"X-Poedit-Basepath: ../../../..\n"
+"X-Poedit-SearchPath-0: .\n"
 
+#: app/libs/controller_scaffold_lite.php:41
+msgid "Record created "
+msgstr "Registro creado "
+
+#: app/libs/controller_scaffold_lite.php:57
+msgid "Record not found"
+msgstr "Registro no encontrado"
+
+#: app/libs/controller_scaffold_lite.php:66
+msgid "Record updated"
+msgstr "Registro actualizado"
+
+#: app/libs/controller_scaffold_lite.php:83
+msgid "Something was wrong"
+msgstr "Algo salió mal"
+
+#: app/views/_shared/partials/paginators/classic.phtml:50
+#: app/views/_shared/partials/paginators/classic.phtml:52
+#: app/views/_shared/partials/paginators/digg.phtml:55
+#: app/views/_shared/partials/paginators/digg.phtml:59
+msgid "Prev"
+msgstr "Anterior"
+
+#: app/views/_shared/partials/paginators/classic.phtml:63
+#: app/views/_shared/partials/paginators/digg.phtml:90
+msgid "Next"
+msgstr "Siguiente"
+
+#: app/views/_shared/scaffolds/lite/page.phtml:3
+#: app/views/_shared/scaffolds/lite/show.phtml:12
+#: app/views/admin/resources/create.phtml:24
+#: app/views/admin/roles/create.phtml:13 app/views/admin/users/create.phtml:22
+msgid "List"
+msgstr "Lista"
+
+#: app/views/_shared/scaffolds/lite/page.phtml:5
+#: app/views/_shared/scaffolds/lite/show.phtml:13
+#: app/views/admin/resources/create.phtml:2
+#: app/views/admin/roles/create.phtml:2 app/views/admin/users/create.phtml:2
+msgid "Create"
+msgstr "Crear"
+
+#: app/views/_shared/scaffolds/lite/page.phtml:17
+msgid "Actions"
+msgstr "Acciones"
+
+#: app/views/_shared/scaffolds/lite/page.phtml:27
+#: app/views/_shared/scaffolds/lite/show.phtml:14
+msgid "Edit"
+msgstr "Editar"
+
+#: app/views/_shared/scaffolds/lite/page.phtml:28
+#: app/views/_shared/scaffolds/lite/show.phtml:15
+msgid "Are you sure you want to delete?"
+msgstr "¿Está seguro que quiere borrar?"
+
+#: app/views/_shared/scaffolds/lite/page.phtml:28
+#: app/views/_shared/scaffolds/lite/show.phtml:15
+msgid "Are you sure?"
+msgstr "¿Está seguro?"
+
+#: app/views/_shared/scaffolds/lite/page.phtml:28
+#: app/views/_shared/scaffolds/lite/show.phtml:15
+msgid "Delete"
+msgstr "Eliminar"
+
+#: app/views/_shared/scaffolds/lite/page.phtml:39
+msgid "No records"
+msgstr "No hay registros"
+
+#: app/views/_shared/scaffolds/lite/show.phtml:4
+msgid "Show"
+msgstr "Mostrar"
+
+#: app/views/admin/resources/create.phtml:18
+#: app/views/admin/roles/create.phtml:9 app/views/admin/users/create.phtml:18
+msgid "Save"
+msgstr "Guardar"
+
+#: app/views/admin/users/create.phtml:2
+msgid "Users"
+msgstr "Usuarios"
