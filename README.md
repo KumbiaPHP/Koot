@@ -13,12 +13,13 @@ Community backend to avoid repeating ourselves in new applications.
 ### Install
 
 1. Clone or download this repository
-2. Open the console and enter the `KuAdmin/` folder
-3. Run command `composer install` to get the dependencies
+2. Rename folder to `Koot`
+3. Open the console and enter the `Koot/` folder
+4. Run command `composer install` to get the dependencies
 
 ### Run
 
-1. Open the console and enter the `KuAdmin/app/` folder
+1. Open the console and enter the `koot/app/` folder
 2. Run command `bin/phpserver`
 3. Open http://0.0.0.0:8001 in your browser
 
