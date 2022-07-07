@@ -13,8 +13,8 @@ Community backend to avoid repeating ourselves in new applications.
 ### Install
 
 1. Clone or download this repository
-2. Rename folder to `Koot`
-3. Open the console and enter the `Koot/` folder
+2. Rename folder to `koot`
+3. Open the console and enter the `koot/` folder
 4. Run command `composer install` to get the dependencies
 
 ### Run
