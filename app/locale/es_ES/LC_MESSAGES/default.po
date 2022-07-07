@@ -14,8 +14,8 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: app/libs/controller_scaffold_lite.php:41
-msgid "Record created "
-msgstr "Registro creado "
+msgid "Record created"
+msgstr "Registro creado"
 
 #: app/libs/controller_scaffold_lite.php:57
 msgid "Record not found"
