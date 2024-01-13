@@ -1,0 +1,31 @@
+@media (min-width: 992px) {
+    #develop {
+        --block-spacing-horizontal: calc(var(--spacing) * 1.75);
+        grid-column-gap: calc(var(--block-spacing-horizontal));
+        display: grid;
+        grid-template-columns:200px auto;
+        height: 100vh;
+        padding: 0
+    }
+
+    #develop > aside {
+        border-right: 1px solid var(--muted-border-color)
+    }
+
+    #doc > nav {
+        border-bottom: 1px solid var(--muted-border-color)
+    }
+
+    #menu {
+        background-color: var();
+    }
+
+    .settings {
+        text-decoration: none;
+        position: absolute;
+        bottom: 0;
+        padding-bottom: 1em;
+        width: 200px;
+        border-top: 1px solid solid var(--muted-border-color)
+    }
+}
