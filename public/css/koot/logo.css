@@ -1,0 +1,18 @@
+/* Dark color scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --koot-logo-wordmark: #bdecee;
+    }
+}
+
+/* Can be forced with data-theme="light" */
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+    --koot-logo-wordmark: #002741;
+}
+
+[data-theme="dark"],
+:root:not([data-theme="light"]) {
+    --koot-logo-wordmark: #bdecee;
+}
