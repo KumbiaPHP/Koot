@@ -16,3 +16,15 @@
 :root:not([data-theme="light"]) {
     --koot-logo-wordmark: #bdecee;
 }
+
+svg.logo {
+    width: 150px;
+    height: auto;
+}
+
+@media (min-width: 576px) {
+    svg.logo {
+        width: 300px;
+        height: auto;
+    }
+}
