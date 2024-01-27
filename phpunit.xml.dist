@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
-         bootstrap="app/tests/bootstrap.php"
-         forceCoversAnnotation="false"
-         beStrictAboutCoversAnnotation="false"
-         beStrictAboutOutputDuringTests="true"
-         beStrictAboutTodoAnnotatedTests="true"
-         verbose="true"
-         colors="true">
-    <testsuites>
-        <testsuite name="Application testsuite">
-            <directory suffix="Test.php">app/tests/</directory>
-        </testsuite>
-    </testsuites>
-    <php>
-        <!-- <env name="metadata_table" value="test"/>
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+    bootstrap="app/tests/bootstrap.php"
+    forceCoversAnnotation="false"
+    beStrictAboutCoversAnnotation="false"
+    beStrictAboutOutputDuringTests="true"
+    beStrictAboutTodoAnnotatedTests="true"
+    verbose="true"
+    colors="true">
+  <coverage processUncoveredFiles="true">
+    <include>
+      <directory suffix=".php">.</directory>
+    </include>
+    <exclude>
+      <directory>app/tests</directory>
+      <directory>app/temp</directory>
+      <directory>vendor</directory>
+      <directory>app/config</directory>
+    </exclude>
+  </coverage>
+  <testsuites>
+    <testsuite name="Admin testsuite">
+      <directory suffix="Test.php">app/tests/</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <!-- <env name="metadata_table" value="test"/>
         <env name="metadata_schema" value=""/> -->
-        <server name="SERVER_NAME" value="https://admin.kumbiahp.com"/>
-        <server name="REMOTE_ADDR" value="127.0.0.6"/>
-        <ini name="error_reporting" value="-1"/>
-    </php>
-
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">.</directory>
-            <exclude>
-                <directory>app/tests</directory>
-                <directory>app/temp</directory>
-                <directory>vendor</directory>
-                <directory>app/config</directory>
-            </exclude>
-        </whitelist>
-        
-    </filter>
-    <!-- <logging>
+    <server name="SERVER_NAME" value="https://admin.kumbiahp.com"/>
+    <server name="REMOTE_ADDR" value="127.0.0.6"/>
+    <ini name="error_reporting" value="-1"/>
+  </php>
+  <!-- <logging>
         <log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
     </logging> -->
 </phpunit>
