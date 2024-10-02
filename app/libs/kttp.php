@@ -8,37 +8,17 @@ class Kttp
 {
     const USER_AGENT = 'KumbiaPHP ';//.KUMBIA_VERSION;
 
-    /**
-     * @var string
-     */
-    private string $method;
-    /**
-     * @var string
-     */
-    private string $url;
-    /**
-     * @var string
-     */
     private string $query = '';
-    /**
-     * @var array
-     */
-    private array $headers = [];
-    /**
-     * @var string|null
-     */
+
     private string $body;
-    /**
-     * @var array
-     */
+
     private array $curlopts = [];
 
-    protected function __construct(string $method, string $url, array $headers = [])
-    {
-        $this->method = $method;
-        $this->url = $url;
-        $this->headers = $headers;
-    }
+    protected function __construct(
+        private string $method = '',
+        private string $url = '',
+        private array $headers = [],
+    ) {}
 
     public static function get(string $url): self
     {
