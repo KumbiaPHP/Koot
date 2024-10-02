@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.0",
         "ext-pdo": "*",
         "kumbia/framework": "^1",
         "kumbia/activerecord": "^0.5"
