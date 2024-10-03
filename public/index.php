@@ -54,7 +54,7 @@ const PRODUCTION = false;
  * - Esta ruta se utiliza para cargar los archivos de la aplicacion
  * - En producción, es recomendable ponerla manual usando const
  */
-const APP_PATH = '../app/';
+const APP_PATH = '../koot/';
 
 /*
  * Define el CORE_PATH

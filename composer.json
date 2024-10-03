@@ -1,5 +1,5 @@
 {
-    "name": "kumbia/kuadmin",
+    "name": "kumbia/koot",
     "description": "KumbiaPHP admin",
     "keywords": [
         "KumbiaPHP",
@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Koot\\": "app/"
+            "Koot\\": "koot/"
         }
     },
     "config": {
