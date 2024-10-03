@@ -46,9 +46,10 @@ const themeSwitcher = {
 
   // Set scheme
   set scheme(scheme) {
-    if (scheme == "dark" || scheme == "light") {
-      this._scheme = scheme
+    if (! scheme in ["dark", "light"]) {
+      return
     }
+    this._scheme = scheme
     this.applyScheme()
     this.schemeToLocalStorage()
   },
