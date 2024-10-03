@@ -21,6 +21,9 @@
     "require": {
         "php": ">=8.0",
         "ext-pdo": "*",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "ext-gettext": "*",
         "kumbia/framework": "^1",
         "kumbia/activerecord": "^0.5"
     },
