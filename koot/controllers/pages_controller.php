@@ -38,6 +38,6 @@ class PagesController extends AppController
 
     public function __call($name, $params)
     {
-        View::select('/' . implode('/', [$name, ...$params]));
+        View::select(implode('/', [$name, ...$params]));
     }
 }
