@@ -9,13 +9,13 @@
     "homepage": "https://kumbiaphp.com",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/KumbiaPHP/KuAdmin/issues",
+        "issues": "https://github.com/KumbiaPHP/Koot/issues",
         "slack": "https://slack.kumbiaphp.com"
     },
     "authors": [
         {
             "name": "Kumbia Community",
-            "homepage": "https://github.com/KumbiaPHP/KuAdmin/graphs/contributors"
+            "homepage": "https://github.com/KumbiaPHP/Koot/graphs/contributors"
         }
     ],
     "require": {
@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "Koot\\": "app/"
         }
     },
     "config": {
