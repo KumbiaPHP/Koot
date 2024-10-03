@@ -2,6 +2,7 @@
 /composer.lock
 /public/index.php
 
+/app/config/exception.php
 # temp
 /app/temp/*
 
