@@ -14,13 +14,13 @@ const themeSwitcher = {
 
   // Init
   init() {
-    this.scheme = this.schemeFromLocalStorage
+    this.scheme = this.schemeFromLocalStorage ?? this.preferredColorScheme
     this.initSwitchers()
   },
 
   // Get color scheme from local storage
   get schemeFromLocalStorage() {
-        return window.localStorage?.getItem(this.localStorageKey) ?? this.preferredColorScheme
+        return window.localStorage?.getItem(this.localStorageKey)
   },
 
   // Preferred color scheme
