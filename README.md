@@ -1,4 +1,4 @@
-![KumbiaPHP logo](https://rawgit.com/kumbiaphp/kumbiaphp/master/default/public/img/kumbiaphp.svg)
+![Koot logo](https://raw.githubusercontent.com/KumbiaPHP/Koot/master/public/img/koot.svg)
 
 ## Koot
 
