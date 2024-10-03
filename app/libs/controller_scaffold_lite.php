@@ -7,12 +7,12 @@
 abstract class ControllerScaffoldLite extends ControllerAdmin
 {
 
-    /** @var string Folder in views/_shared/scaffolds/ */
-    public $scaffold = 'lite';
-    /** @var string Model Name in CamelCase */
-    public $model = '';
-    /** @var int Number of records per page */
-    public $perPage = 30;
+    /** Folder in views/_shared/scaffolds/ */
+    public string $scaffold = 'lite';
+    /** Model Name in CamelCase */
+    public string $model = '';
+    /** Number of records per page */
+    public int $perPage = 30;
 
     public function index()
     {
