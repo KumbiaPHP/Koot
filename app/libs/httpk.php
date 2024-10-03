@@ -4,7 +4,7 @@
  * Http Client
  */
 
-class Kttp
+class Httpk
 {
     const USER_AGENT = 'KumbiaPHP ';//.KUMBIA_VERSION;
 
