@@ -6,7 +6,7 @@ Community backend to avoid repeating ourselves in new applications.
 
 ### Requirements
 
-* PHP >= 7.4 <https://www.php.net/>
+* PHP >= 8.0 <https://www.php.net/>
 * Composer <https://getcomposer.org/download/>
 * Multi language
 
