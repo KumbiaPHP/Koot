@@ -18,13 +18,13 @@
 }
 
 svg.logo {
-    width: 150px;
+    width: 5rem;
     height: auto;
 }
 
 @media (min-width: 576px) {
     svg.logo {
-        width: 300px;
+        width: 10rem;
         height: auto;
     }
 }
