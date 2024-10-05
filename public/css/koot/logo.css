@@ -20,6 +20,7 @@
 svg.logo {
     width: 5rem;
     height: auto;
+    margin: -1rem;
 }
 
 @media (min-width: 576px) {
