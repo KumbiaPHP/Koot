@@ -4,7 +4,10 @@
     <div class="actions">
         <?= Html::linkAction("create/", _('Create'), 'role="button"') ?>
     </div>
-    <?php if (isset($data) && (count($data) > 0)) : ?>
+<?php if (!isset($data) && (count($data) < 1)) : ?>
+        <h2><?= _('No records') ?></h2>
+</div>
+<?php endif; return 1 ?>
         <?php $path = $action_name === 'page' ? '../../' : ''; ?>
         <figure>
         <table>
@@ -33,9 +36,4 @@
         </table>
         </figure>
         <?php View::partial('paginators/digg', false, ['page' => $data]) ?>
-
-    <?php else : // If there are no items
-    ?>
-        <h2><?= _('No records') ?></h2>
-    <?php endif ?>
 </div>
