@@ -2,5 +2,5 @@
 
 class ResourcesController extends ControllerScaffoldLite
 {
-    public $model = 'resources';
+    public string $model = 'resources';
 }

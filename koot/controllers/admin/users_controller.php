@@ -2,5 +2,5 @@
 
 class UsersController extends ControllerScaffoldLite
 {
-    public $model = 'Users';
+    public string $model = 'Users';
 }
