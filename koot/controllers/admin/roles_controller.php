@@ -2,5 +2,5 @@
 
 class RolesController extends ControllerScaffoldLite
 {
-    public string $model = 'roles';
+    public string $model = 'Roles';
 }

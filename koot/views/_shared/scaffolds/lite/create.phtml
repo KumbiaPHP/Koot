@@ -1,0 +1,12 @@
+<div id="scaffold">
+    <?php View::content() ?>
+    <h1><?= ucwords("$model"), ": <span>$action_name</span>" ?></h1>
+
+    <div class="col-8 offset-2">
+        <?= ModelLiteForm::create($$model)?>
+    </div>
+
+    <div class="col-12">
+        <a href="../" class="btn btn-default"><?= _('List') ?></a>
+    </div>
+</div>
